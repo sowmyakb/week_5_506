@@ -1,124 +1,166 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="row">
-    <div class="col-md-10 mx-auto">
-
-        <h1 class="h3 mb-4">About Foodie</h1>
-
-        <!-- 1. Project name and pitch -->
-        <section class="mb-4">
-            <h2 class="h5">1. Project</h2>
-            <p>
-                <strong>Foodie</strong> &mdash; a Recipe Scaler and Meal Planner web app.
-                Foodie is for people who want an easy way to plan their meals and adjust recipes
-                without doing manual calculations. Users search recipes via the Edamam API,
-                automatically scale ingredient quantities by serving size, and assign recipes
-                to days in a simple weekly meal plan.
+<div class="row justify-content-center">
+    <div class="col-lg-9 col-xl-8">
+        <div class="text-center mb-4">
+            <span class="badge rounded-pill text-bg-danger mb-2">About us</span>
+            <h1 class="h2 text-body">🍽️ Foodie</h1>
+            <p class="lead text-body-secondary mb-0">
+                The easiest way to plan your meals and automatically scale recipes by servings &mdash;
+                for people who want a quick weekly meal plan with adjustable portions, without
+                doing manual calculations.
             </p>
-        </section>
+        </div>
 
-        <!-- 2. Team members and roles -->
-        <section class="mb-4">
-            <h2 class="h5">2. Team Members and Roles</h2>
-            <ul>
-                <li><strong>Sam</strong> &mdash; Server-side (backend logic, API integration)</li>
-                <li><strong>Asia</strong> &mdash; Client-side (UI/UX, frontend implementation in JavaScript &amp; CSS)</li>
-                <li><strong>Justin</strong> &mdash; Db-and-security (database management, security considerations, system design)</li>
-                <li><strong>Sowmya Korasikha</strong> &mdash; Coordinator (team coordination, About page agreement, prep for Week 6 contracts session)</li>
-            </ul>
-        </section>
+        <div class="card border-0 shadow-sm rounded-4 mb-4">
+            <div class="card-body p-0">
+                <div class="list-group list-group-flush rounded-4">
 
-        <!-- 3. Project type -->
-        <section class="mb-4">
-            <h2 class="h5">3. Project Type</h2>
-            <p class="text-muted small mb-2"><em>Draft &mdash; pending team review.</em></p>
-            <p>
-                <strong>Custom variant: External-API consumer + CRUD.</strong>
-                Users authenticate, search recipes from a third-party API (Edamam),
-                persist saved recipes and meal plans in our own Postgres database,
-                and view/edit/delete them through a Flask web UI.
-            </p>
-        </section>
+                    <div class="list-group-item bg-light border-danger-subtle py-3">
+                        <div class="d-flex w-100 justify-content-between align-items-center flex-wrap gap-2">
+                            <h2 class="h5 mb-0 text-body">Project brief</h2>
+                            <span class="badge text-bg-light text-body border border-danger-subtle">8 sections</span>
+                        </div>
+                    </div>
 
-        <!-- 4. Endpoints planned -->
-        <section class="mb-4">
-            <h2 class="h5">4. Endpoints Planned</h2>
-            <p class="text-muted small mb-2"><em>Draft &mdash; pending team review.</em></p>
-            <pre class="border rounded p-3 bg-light"><code>GET  /recipes/search?q=&lt;query&gt;          Search recipes via Edamam API
-GET  /recipes/&lt;id&gt;                       View recipe details and nutrition
-POST /plans                              Create a new weekly meal plan
-GET  /plans                              List all of the user's meal plans
-GET  /plans/&lt;id&gt;                         View one meal plan with its assigned recipes
-POST /plans/&lt;id&gt;/items                   Add a recipe to a day/meal slot in a plan
-POST /plans/&lt;id&gt;/items/&lt;item_id&gt;/scale   Scale servings for a planned recipe
-POST /plans/&lt;id&gt;/delete                  Delete a meal plan</code></pre>
-        </section>
+                    <!-- 1. Project name and pitch -->
+                    <div class="list-group-item d-flex align-items-start gap-3 py-3">
+                        <span class="badge rounded-pill bg-light text-body border border-danger-subtle align-middle mt-1">1</span>
+                        <span>
+                            <strong>Project name and pitch:</strong><br>
+                            🍽️ <strong>Foodie</strong> &mdash; a Recipe Scaler and Meal Planner web app.
+                            Users search recipes via the Edamam API, automatically scale ingredient
+                            quantities by serving size, and assign recipes to days in a simple
+                            weekly meal plan.
+                        </span>
+                    </div>
 
-        <!-- 5. Web-based data source -->
-        <section class="mb-4">
-            <h2 class="h5">5. Web-Based Data Source</h2>
-            <p>
-                <strong>Primary API:</strong>
-                <a href="https://developer.edamam.com/edamam-docs-recipe-api" target="_blank" rel="noopener">Edamam Recipe Search API</a>.
-            </p>
-            <p>
-                <strong>Specific endpoint:</strong>
-                <code>GET https://api.edamam.com/api/recipes/v2?type=public&amp;q=&lt;query&gt;&amp;app_id=&lt;id&gt;&amp;app_key=&lt;key&gt;</code>
-            </p>
-            <p>
-                <strong>Free-tier limits:</strong> approximately 10 monthly active users,
-                limited requests per user per day, and restrictions on caching or storing
-                recipe data &mdash; suitable for a demo/portfolio project rather than large-scale production.
-            </p>
-            <p class="mb-0">
-                <strong>Backup API:</strong>
-                <a href="https://fdc.nal.usda.gov/api-guide.html" target="_blank" rel="noopener">USDA FoodData Central API</a>
-                &mdash; free, ~1,000 requests/hour per IP, but only raw food/nutrition data (no recipes or images).
-            </p>
-        </section>
+                    <!-- 2. Team members and roles -->
+                    <div class="list-group-item d-flex align-items-start gap-3 py-3">
+                        <span class="badge rounded-pill bg-light text-body border border-danger-subtle align-middle mt-1">2</span>
+                        <span>
+                            <strong>Team members and roles:</strong><br>
+                            <strong>Sam</strong> &mdash; server-side development, backend logic, API integration<br>
+                            <strong>Asia</strong> &mdash; frontend, UI/UX, JavaScript &amp; CSS<br>
+                            <strong>Justin</strong> &mdash; database management, security, system design<br>
+                            <strong>Sowmya Korasikha</strong> &mdash; coordinator, CONTRACTS.md owner, integration testing, PR review
+                        </span>
+                    </div>
 
-        <!-- 6. Schema sketch -->
-        <section class="mb-4">
-            <h2 class="h5">6. Schema Sketch</h2>
-            <p class="text-muted small mb-2"><em>Draft &mdash; pending team review.</em></p>
-            <pre class="border rounded p-3 bg-light"><code>Users        (id, username, password_hash, created_at)
+                    <!-- 3. Project type -->
+                    <div class="list-group-item d-flex align-items-start gap-3 py-3">
+                        <span class="badge rounded-pill bg-light text-body border border-danger-subtle align-middle mt-1">3</span>
+                        <span>
+                            <strong>Project type:</strong><br>
+                            Custom variant: <strong>External-API consumer + CRUD</strong>. Users authenticate,
+                            search recipes from a third-party API (Edamam), persist saved recipes and meal plans
+                            in our own Postgres database, and view/edit/delete them through a Flask web UI.
+                        </span>
+                    </div>
 
-Recipes      (id, edamam_uri, title, image_url, source_url, base_servings,
-              calories_per_serving, protein_g, carbs_g, fat_g, cached_at)
+                    <!-- 4. Endpoints planned -->
+                    <div class="list-group-item d-flex align-items-start gap-3 py-3">
+                        <span class="badge rounded-pill bg-light text-body border border-danger-subtle align-middle mt-1">4</span>
+                        <span>
+                            <strong>Endpoints planned:</strong><br>
+                            <code>GET /recipes/search</code> &mdash; search recipes via Edamam API<br>
+                            <code>GET /recipes/&lt;id&gt;</code> &mdash; fetch recipe details + nutrition<br>
+                            <code>POST /recipes/scale</code> &mdash; scale ingredient quantities<br>
+                            <code>POST /mealplan</code> &mdash; add recipe to weekly planner<br>
+                            <code>GET /mealplan</code> &mdash; retrieve weekly meal plan<br>
+                            <code>DELETE /mealplan/&lt;day&gt;</code> &mdash; remove meal from day<br>
+                            <code>GET /nutrition/&lt;id&gt;</code> &mdash; nutrition breakdown per recipe
+                        </span>
+                    </div>
 
-MealPlans    (id, user_id, name, week_start_date, created_at)
+                    <!-- 5. Web-based data sources -->
+                    <div class="list-group-item d-flex align-items-start gap-3 py-3">
+                        <span class="badge rounded-pill bg-light text-body border border-danger-subtle align-middle mt-1">5</span>
+                        <span>
+                            <strong>Web-based data sources:</strong><br>
+                            <strong>Primary API:</strong>
+                            <a href="https://developer.edamam.com/edamam-docs-recipe-api" target="_blank" rel="noopener">Edamam Recipe Search API</a><br>
+                            <strong>Specific endpoint:</strong>
+                            <code>GET https://api.edamam.com/api/recipes/v2?type=public&amp;q=&lt;query&gt;&amp;app_id=&lt;id&gt;&amp;app_key=&lt;key&gt;</code><br>
+                            <strong>Free-tier limits:</strong> approximately 10 monthly active users; limited
+                            requests per user per day; no caching or storing recipe data &mdash; suitable for a
+                            demo/portfolio project rather than large-scale production.<br>
+                            <strong>Backup API:</strong>
+                            <a href="https://fdc.nal.usda.gov/api-guide.html" target="_blank" rel="noopener">USDA FoodData Central API</a>
+                            &mdash; free, ~1,000 requests/hour per IP, but only raw food/nutrition data (no recipes or images).
+                        </span>
+                    </div>
 
-PlanItems    (id, plan_id, recipe_id, day_of_week, meal_type, servings_scaled)</code></pre>
-        </section>
+                    <!-- 6. Schema sketch -->
+                    <div class="list-group-item d-flex align-items-start gap-3 py-3">
+                        <span class="badge rounded-pill bg-light text-body border border-danger-subtle align-middle mt-1">6</span>
+                        <span>
+                            <strong>Schema sketch:</strong><br>
+                            <code>Users(id, username, password_hash, created_at)</code><br>
+                            <code>Recipes(id, api_id, name, image_url, calories, protein, carbs, fat)</code><br>
+                            <code>Ingredients(id, recipe_id, name, quantity, unit)</code><br>
+                            <code>MealPlans(id, user_id, day_of_week, recipe_id, servings)</code>
+                        </span>
+                    </div>
 
-        <!-- 7. Link to team's S3 bucket -->
-        <section class="mb-4">
-            <h2 class="h5">7. S3 Bucket</h2>
-            <p>
-                Each team member maintains their own S3 static site, served via the
-                <code>/site/</code> route of their personal skeleton. Sowmya's S3 site is at:
-                <a href="http://sowmya-tcss506-landing.s3-website-us-west-2.amazonaws.com" target="_blank" rel="noopener">
-                    sowmya-tcss506-landing.s3-website-us-west-2.amazonaws.com
-                </a>.
-            </p>
-        </section>
+                    <!-- 7. S3 bucket -->
+                    <div class="list-group-item d-flex align-items-start gap-3 py-3">
+                        <span class="badge rounded-pill bg-light text-body border border-danger-subtle align-middle mt-1">7</span>
+                        <span>
+                            <strong>S3 bucket:</strong><br>
+                            <a href="http://sowmya-tcss506-landing.s3-website-us-west-2.amazonaws.com" target="_blank" rel="noopener">http://sowmya-tcss506-landing.s3-website-us-west-2.amazonaws.com</a><br>
+                            <small class="text-muted">
+                                Convention: each team member's About page links to their own personal S3 bucket
+                                from Assignment 1, served at <code>/site/</code> in their skeleton. Section 7 is
+                                the only section that varies across team members' repos.
+                            </small>
+                        </span>
+                    </div>
 
-        <!-- 8. Link to team GitHub org -->
-        <section class="mb-4">
-            <h2 class="h5">8. Team GitHub Organization</h2>
-            <p class="mb-0">
-                <a href="https://github.com/TeamDelta506" target="_blank" rel="noopener">https://github.com/TeamDelta506</a>
-            </p>
-        </section>
+                    <!-- 8. GitHub organization -->
+                    <div class="list-group-item d-flex align-items-start gap-3 py-3 border-0">
+                        <span class="badge rounded-pill bg-light text-body border border-danger-subtle align-middle mt-1">8</span>
+                        <span>
+                            <strong>GitHub organization:</strong><br>
+                            <a href="https://github.com/TeamDelta506" target="_blank" rel="noopener">https://github.com/TeamDelta506</a>
+                        </span>
+                    </div>
 
-        <p class="text-muted small mt-4">
-            All four team members keep this About page synchronized in their individual repos.
-            Sections marked <em>Draft &mdash; pending team review</em> are starting proposals
-            from the Coordinator and will be finalized in the upcoming team sync ahead of the
-            Week 6 contracts session.
-        </p>
+                </div>
+            </div>
+        </div>
 
+        <div class="accordion accordion-flush shadow-sm rounded-4 overflow-hidden border border-danger-subtle" id="aboutTips">
+            <div class="accordion-item border-danger-subtle">
+                <h2 class="accordion-header">
+                    <button class="accordion-button bg-light text-body fw-medium" type="button" data-bs-toggle="collapse" data-bs-target="#tipOne" aria-expanded="true" aria-controls="tipOne">
+                        Coordination notes
+                    </button>
+                </h2>
+                <div id="tipOne" class="accordion-collapse collapse show" data-bs-parent="#aboutTips">
+                    <div class="accordion-body small text-secondary">
+                        All four members keep this About page synchronized in their individual repos.
+                        The only section that varies between repos is <strong>Section 7 (S3 bucket)</strong>,
+                        which points to each member's own personal bucket. Everything else is identical.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item border-danger-subtle">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed bg-white text-body fw-medium" type="button" data-bs-toggle="collapse" data-bs-target="#tipTwo" aria-expanded="false" aria-controls="tipTwo">
+                        Looking ahead &mdash; Week 6 contracts session
+                    </button>
+                </h2>
+                <div id="tipTwo" class="accordion-collapse collapse" data-bs-parent="#aboutTips">
+                    <div class="accordion-body small text-secondary">
+                        The endpoints, schema, and project type above are the seed inputs for the
+                        Week 6 Coordinator-LLM session, which will produce <code class="text-body">CONTRACTS.md</code>
+                        &mdash; the team's binding spec for role-implementation work.
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}
